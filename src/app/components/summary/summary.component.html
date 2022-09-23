@@ -1,0 +1,31 @@
+<div class="summary">
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="all">
+                <div class="card">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content</p>
+                        <a href="#" class="btn btn-primary">See trunsactions</a>
+                    </div>
+                    <div class="card-footer">
+                        You have {{getTotal()}} transactions
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngFor="let card of cards; index as idx">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{getCardData(card.type)}}</h5>
+                    <p class="card-text">{{card.name}}</p>
+                    <a [routerLink]="['/navigator']" [queryParams]="{tab: idx}" class="btn btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
